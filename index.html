@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Gen Consulting & Value Arbitrage Dashboard (2026)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            950: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col md:flex-row">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-full md:w-80 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0">
+        <div class="p-6 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+                    <i class="fa-solid fa-chart-pie text-emerald-400 text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-tight bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Value Arbitrage</h1>
+                    <p class="text-xs text-slate-400">Consulting Paradigm (2026)</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 p-4 space-y-1.5">
+            <button onclick="switchTab('macro')" id="btn-macro" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition bg-slate-800 text-emerald-400 border border-slate-700/50">
+                <i class="fa-solid fa-earth-americas w-5"></i> Macro Dynamics & Trends
+            </button>
+            <button onclick="switchTab('problems')" id="btn-problems" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200">
+                <i class="fa-solid fa-sliders w-5"></i> Enterprise ROI Simulator
+            </button>
+            <button onclick="switchTab('firms')" id="btn-firms" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200">
+                <i class="fa-solid fa-building-user w-5"></i> Firm Fit & Sliders
+            </button>
+            <button onclick="switchTab('roadmap')" id="btn-roadmap" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200">
+                <i class="fa-solid fa-road w-5"></i> 24-Month Roadmap
+            </button>
+            <button onclick="switchTab('matrix')" id="btn-matrix" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200">
+                <i class="fa-solid fa-table-cells w-5"></i> Prioritization Matrix
+            </button>
+        </nav>
+        <div class="p-4 border-t border-slate-800 bg-slate-900/50">
+            <div class="flex items-center gap-3 p-2 bg-slate-950 rounded-lg border border-slate-800">
+                <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold text-xs border border-blue-500/20">BC</div>
+                <div>
+                    <p class="text-xs font-semibold">B.Com + MBA Profile</p>
+                    <p class="text-[10px] text-slate-500">Strategic Value Modeler</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col min-w-0 bg-slate-950 overflow-y-auto h-screen p-6 md:p-8 custom-scrollbar">
+
+        <!-- TAB 1: MACRO DYNAMICS -->
+        <div id="tab-macro" class="tab-content space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Macro Dynamics & Paradigm Shift (2026)</h2>
+                    <p class="text-slate-400 mt-1">Tracking the structural market changes shaking legacy consulting operations.</p>
+                </div>
+                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-xs font-medium">Value-Delivery Convergence</span>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <p class="text-sm text-slate-400 font-medium">Management Consulting Market</p>
+                        <i class="fa-solid fa-money-bill-trend-up text-emerald-400 text-lg"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-white">$520.47B</p>
+                    <p class="text-xs text-slate-500 mt-2">Scaling to $796.38B by 2034 (5.5% CAGR)</p>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <p class="text-sm text-slate-400 font-medium">The Leverage Collapse</p>
+                        <i class="fa-solid fa-network-wired text-blue-400 text-lg"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-white">40% - 60%</p>
+                    <p class="text-xs text-slate-500 mt-2">Junior analyst workload automated by Agentic AI</p>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-700 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <p class="text-sm text-slate-400 font-medium">Average Software Quality Floor</p>
+                        <i class="fa-solid fa-chart-line text-purple-400 text-lg"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-white">+43%</p>
+                    <p class="text-xs text-slate-500 mt-2">Uplift rate introduced by generative workflows</p>
+                </div>
+            </div>
+
+            <!-- Detailed Structural Analysis -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-gears text-amber-400"></i> The Shift to Agentic Integration
+                    </h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Clients are rapidly migrating away from slide-heavy, time-and-materials advisory structures. Guided by strict capital pressures, corporate boards demand explicit, outcome-tied ROI instead of supporting massive delivery teams that perform manual data gathering.
+                    </p>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Widespread adoption of the <strong>Model Context Protocol (MCP)</strong> and autonomous AI agents has commoditized strategy tasks like MECE structuring, basic data ingestion, and standard financial modeling.
+                    </p>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-chart-column text-emerald-400"></i> Agile Value Arbitrage
+                    </h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        By merging structural business education (corporate finance, accounting) with a dynamic digital transformation suite (low-code tools, API orchestration, and vector engines), agile consultants can solve complex enterprise leaks that legacy firms struggle to resolve cheaply.
+                    </p>
+                    <div class="p-3 bg-slate-950 rounded-lg border border-slate-800/80 flex items-center gap-3">
+                        <i class="fa-solid fa-lightbulb text-emerald-400 shrink-0"></i>
+                        <p class="text-xs text-slate-400">Our profile strategy transitions the baseline consultant role from static analyst slide decks to active asset-building engines.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Challenges of the Shift -->
+            <div class="p-6 bg-slate-900 rounded-xl border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-4">The 2026 Macro Problem Matrix</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 text-xs uppercase tracking-wider text-slate-400">
+                                <th class="py-3 px-4">Macro Challenge</th>
+                                <th class="py-3 px-4">Root Cause</th>
+                                <th class="py-3 px-4">Client Impact</th>
+                                <th class="py-3 px-4 text-emerald-400">Next-Gen Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-slate-800/50">
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Billable Hour Collapse</td>
+                                <td class="py-3.5 px-4 text-slate-400">Agentic AI automates 40-60% of junior analyst deliverables.</td>
+                                <td class="py-3.5 px-4 text-slate-400">Extreme margin compression; clients refuse legacy pricing tiers.</td>
+                                <td class="py-3.5 px-4 text-emerald-400 font-medium">Outcome-Based Asset Pricing models.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Commoditization of Strategy</td>
+                                <td class="py-3.5 px-4 text-slate-400">LLMs provide client-side teams instant access to frameworks.</td>
+                                <td class="py-3.5 px-4 text-slate-400">High-level strategy mandates shrink or become low-margin.</td>
+                                <td class="py-3.5 px-4 text-emerald-400 font-medium">Continuous Live Execution Engines.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Leverage Pyramid Disruption</td>
+                                <td class="py-3.5 px-4 text-slate-400">AI quality floors require fewer junior human layers to run.</td>
+                                <td class="py-3.5 px-4 text-slate-400">Structural imbalance in talent pipelines.</td>
+                                <td class="py-3.5 px-4 text-emerald-400 font-medium">'Human x Machine' Orchestration Model.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: ENTERPRISE ROI SIMULATOR -->
+        <div id="tab-problems" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Enterprise ROI Simulator</h2>
+                    <p class="text-slate-400 mt-1">Interact with working sliders to simulate financial leakages, recovered values, and monetization.</p>
+                </div>
+            </div>
+
+            <!-- Problem Grid Buttons -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <button onclick="selectProblem(1)" id="prob-1" class="p-4 text-left rounded-xl border border-emerald-500 bg-slate-900/50 transition duration-200 flex flex-col justify-between h-36">
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">PROBLEM 1</span>
+                    <span class="text-sm font-semibold text-white mt-2 block line-clamp-2">Post-ERP Hyper-automation</span>
+                    <span class="text-xs text-slate-500 mt-auto">TAM: $148.15B</span>
+                </button>
+                <button onclick="selectProblem(2)" id="prob-2" class="p-4 text-left rounded-xl border border-slate-800 hover:border-slate-700 bg-slate-900/20 transition duration-200 flex flex-col justify-between h-36">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">PROBLEM 2</span>
+                    <span class="text-sm font-semibold text-slate-300 mt-2 block line-clamp-2">PMI Synergy Analytics</span>
+                    <span class="text-xs text-slate-500 mt-auto">TAM: $65.00B</span>
+                </button>
+                <button onclick="selectProblem(3)" id="prob-3" class="p-4 text-left rounded-xl border border-slate-800 hover:border-slate-700 bg-slate-900/20 transition duration-200 flex flex-col justify-between h-36">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">PROBLEM 3</span>
+                    <span class="text-sm font-semibold text-slate-300 mt-2 block line-clamp-2">Supply Chain Resilience</span>
+                    <span class="text-xs text-slate-500 mt-auto">TAM: $115.01B</span>
+                </button>
+                <button onclick="selectProblem(4)" id="prob-4" class="p-4 text-left rounded-xl border border-slate-800 hover:border-slate-700 bg-slate-900/20 transition duration-200 flex flex-col justify-between h-36">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">PROBLEM 4</span>
+                    <span class="text-sm font-semibold text-slate-300 mt-2 block line-clamp-2">ESG BRSR Compliance</span>
+                    <span class="text-xs text-slate-500 mt-auto">TAM: $12.50B</span>
+                </button>
+                <button onclick="selectProblem(5)" id="prob-5" class="p-4 text-left rounded-xl border border-slate-800 hover:border-slate-700 bg-slate-900/20 transition duration-200 flex flex-col justify-between h-36">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">PROBLEM 5</span>
+                    <span class="text-sm font-semibold text-slate-300 mt-2 block line-clamp-2">CapEx Simulation Engine</span>
+                    <span class="text-xs text-slate-500 mt-auto">TAM: $85.00B</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Controls & Parameters (Sliders) -->
+                <div class="lg:col-span-5 p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-6">
+                    <div class="border-b border-slate-800 pb-3">
+                        <h3 class="text-md font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-emerald-400"></i> Parameter Inputs
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1">Dynamically adjust client metrics and implementation scale.</p>
+                    </div>
+
+                    <!-- Slider 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label id="slider-label-1" class="text-xs font-semibold text-slate-300 uppercase tracking-wide">Enterprise Revenue Scale ($M)</label>
+                            <span id="slider-val-1" class="text-sm font-bold text-emerald-400">$150M</span>
+                        </div>
+                        <input type="range" id="input-slider-1" min="30" max="1000" value="150" oninput="recalculate()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Slider 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label id="slider-label-2" class="text-xs font-semibold text-slate-300 uppercase tracking-wide">Estimated Systemic Leakage %</label>
+                            <span id="slider-val-2" class="text-sm font-bold text-emerald-400">25%</span>
+                        </div>
+                        <input type="range" id="input-slider-2" min="1" max="100" value="25" oninput="recalculate()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Slider 3 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label id="slider-label-3" class="text-xs font-semibold text-slate-300 uppercase tracking-wide">Target Engagement Cost ($k)</label>
+                            <span id="slider-val-3" class="text-sm font-bold text-emerald-400">$150k</span>
+                        </div>
+                        <input type="range" id="input-slider-3" min="30" max="500" value="150" oninput="recalculate()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Dynamic Tech Stack list -->
+                    <div class="pt-4 border-t border-slate-800/80 space-y-3">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Automated Architecture Suite</span>
+                        <div class="flex flex-wrap gap-2" id="tech-stack-list">
+                            <!-- Updated Dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculations & Financial Outputs -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 flex-1 grid grid-cols-2 gap-6">
+                        <div class="col-span-2 border-b border-slate-800 pb-3 flex justify-between items-center">
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-calculator text-emerald-400"></i> Performance Projection Matrix
+                            </h3>
+                            <span id="selected-badge" class="text-[10px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">PROBLEM 1</span>
+                        </div>
+
+                        <div class="space-y-1">
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Total Annual Lost Value</p>
+                            <p id="out-lost" class="text-2xl font-bold text-rose-500">$2,500,000</p>
+                            <p class="text-[10px] text-slate-500">Undetected system structural leaks</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Recovered Cash & Savings</p>
+                            <p id="out-recovered" class="text-2xl font-bold text-emerald-400">$1,000,000</p>
+                            <p class="text-[10px] text-slate-500">Captured in under 9 months of execution</p>
+                        </div>
+                        <div class="space-y-1 border-t border-slate-800/80 pt-4">
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Consultant Upfront Fee</p>
+                            <p id="out-upfront" class="text-2xl font-bold text-white">$50,000</p>
+                            <p class="text-[10px] text-slate-500">Implementation initialization retainer</p>
+                        </div>
+                        <div class="space-y-1 border-t border-slate-800/80 pt-4">
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Performance & Retainer Fee</p>
+                            <p id="out-payout" class="text-2xl font-bold text-white">$192,000</p>
+                            <p class="text-[10px] text-slate-500">Based on performance bonus + monthly SaaS model</p>
+                        </div>
+
+                        <div class="col-span-2 bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Total Arbitrage Earnings</p>
+                                <p id="out-total-consultant" class="text-3xl font-extrabold text-transparent bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text">$242,000</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-slate-400 uppercase tracking-wide font-semibold">Estimated Client ROI</p>
+                                <p id="out-roi" class="text-xl font-bold text-emerald-400">4.1x</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem-specific context -->
+                    <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                        <h4 id="out-strategy-header" class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-circle-nodes text-blue-400"></i> Post-ERP Shadow Integration Loop
+                        </h4>
+                        <p id="out-desc" class="text-sm text-slate-300 leading-relaxed">
+                            Multinational enterprises lose millions to rigid data models post cloud migration, reverting workflows back into unmapped manual spreadsheets. Custom integrations build clean pipelines to return lost data logs to core ERP structures automatically.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: FIRM FIT & SLIDERS -->
+        <div id="tab-firms" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Firm Fit & Recruiting Sliders</h2>
+                    <p class="text-slate-400 mt-1">Recalibrate parameters to see customized candidate placement profiles across target networks.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Skill Sliders -->
+                <div class="lg:col-span-5 p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-6">
+                    <div class="border-b border-slate-800 pb-3">
+                        <h3 class="text-md font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-user-ninja text-emerald-400"></i> Candidate Skill Profile
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1">Drag sliders to set mock capabilities and verify placement scores.</p>
+                    </div>
+
+                    <!-- Skill 1 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-300">Case Architecture & MECE Alignment</span>
+                            <span id="val-skill-1" class="text-xs font-bold text-emerald-400">70%</span>
+                        </div>
+                        <input type="range" id="slider-skill-1" min="10" max="100" value="70" oninput="updateRecruiting()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-300">Executive Presence (Minto Pyramid)</span>
+                            <span id="val-skill-2" class="text-xs font-bold text-emerald-400">65%</span>
+                        </div>
+                        <input type="range" id="slider-skill-2" min="10" max="100" value="65" oninput="updateRecruiting()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-300">Financial Modeling & Valuation (FMVA)</span>
+                            <span id="val-skill-3" class="text-xs font-bold text-emerald-400">75%</span>
+                        </div>
+                        <input type="range" id="slider-skill-3" min="10" max="100" value="75" oninput="updateRecruiting()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-300">Technical & AI Strategy Integration</span>
+                            <span id="val-skill-4" class="text-xs font-bold text-emerald-400">80%</span>
+                        </div>
+                        <input type="range" id="slider-skill-4" min="10" max="100" value="80" oninput="updateRecruiting()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-300">Product Management (Agile Scoping)</span>
+                            <span id="val-skill-5" class="text-xs font-bold text-emerald-400">85%</span>
+                        </div>
+                        <input type="range" id="slider-skill-5" min="10" max="100" value="85" oninput="updateRecruiting()" class="w-full accent-emerald-500 h-1.5 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Target Output Gauges -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Gauge card -->
+                    <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 flex flex-col md:flex-row items-center gap-8">
+                        <!-- Dynamic Placement Ring -->
+                        <div class="relative w-36 h-36 shrink-0 flex items-center justify-center">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="42" stroke="#1e293b" stroke-width="8" fill="transparent" />
+                                <circle id="gauge-ring" cx="50" cy="50" r="42" stroke="#10b981" stroke-width="8" stroke-dasharray="263.89" stroke-dashoffset="65.9" stroke-linecap="round" fill="transparent" class="transition-all duration-300" />
+                            </svg>
+                            <div class="absolute text-center">
+                                <p id="placement-percent" class="text-3xl font-extrabold text-white">75%</p>
+                                <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">PLACEMENT FIT</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex gap-2 p-1 bg-slate-950 rounded-lg border border-slate-800 max-w-xs">
+                                <button onclick="setTargetFirm('deloitte')" id="btn-firm-deloitte" class="px-3 py-1.5 rounded-md text-xs font-bold uppercase transition bg-slate-800 text-emerald-400">Deloitte</button>
+                                <button onclick="setTargetFirm('bain')" id="btn-firm-bain" class="px-3 py-1.5 rounded-md text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200">Bain</button>
+                                <button onclick="setTargetFirm('ey')" id="btn-firm-ey" class="px-3 py-1.5 rounded-md text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200">EY</button>
+                            </div>
+                            <h3 id="out-firm-title" class="text-lg font-bold text-white">Deloitte (Consulting & Advisory)</h3>
+                            <p id="out-firm-desc" class="text-sm text-slate-300 leading-relaxed">
+                                Deploys end-to-end technological integration. Seeks operators capable of running complex system migrations and optimizing digital implementations via agile Product Management strategies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Priority Interventions -->
+                    <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-emerald-400"></i> Core Strategic Requirements
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs" id="out-firm-requirements">
+                            <!-- Updated Dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: 24-MONTH ROADMAP -->
+        <div id="tab-roadmap" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Candidate Preparation Roadmap</h2>
+                    <p class="text-slate-400 mt-1">A detailed 24-month roadmap with custom milestones and completion statuses.</p>
+                </div>
+            </div>
+
+            <!-- Phase tabs -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+                <button onclick="selectPhase(1)" id="phase-tab-1" class="py-2.5 rounded-lg text-xs font-bold uppercase transition bg-slate-800 text-emerald-400 border border-slate-700/50">Months 1–6</button>
+                <button onclick="selectPhase(2)" id="phase-tab-2" class="py-2.5 rounded-lg text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200">Months 7–12</button>
+                <button onclick="selectPhase(3)" id="phase-tab-3" class="py-2.5 rounded-lg text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200">Months 13–18</button>
+                <button onclick="selectPhase(4)" id="phase-tab-4" class="py-2.5 rounded-lg text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200">Months 19–24</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-8 p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-6">
+                    <div>
+                        <h3 id="out-phase-title" class="text-lg font-bold text-white">Months 1–6: The Core Foundation</h3>
+                        <p id="out-phase-subtitle" class="text-xs text-slate-400 mt-1">Refining case execution variables and structural top-down metrics.</p>
+                    </div>
+
+                    <!-- Dynamic milestones -->
+                    <div class="space-y-4" id="out-phase-milestones">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Right column details -->
+                <div class="lg:col-span-4 p-6 bg-slate-900 rounded-xl border border-slate-800 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                            <i class="fa-solid fa-award text-blue-400"></i> Target Certifications
+                        </h4>
+                        <ul class="space-y-3 text-xs" id="out-phase-certs">
+                            <!-- Updated Dynamically -->
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-3">
+                            <i class="fa-solid fa-book text-emerald-400"></i> Key Literature
+                        </h4>
+                        <div class="p-3 bg-slate-950 rounded-lg border border-slate-800/80">
+                            <p id="out-phase-book" class="text-xs font-semibold text-slate-200">Case Interview Secrets</p>
+                            <p id="out-phase-author" class="text-[10px] text-slate-400 mt-0.5">Victor Cheng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: PRIORITIZATION MATRIX -->
+        <div id="tab-matrix" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Prioritization Matrix</h2>
+                    <p class="text-slate-400 mt-1">Comparing complex corporate issues side-by-side using RICE & ICE structures.</p>
+                </div>
+            </div>
+
+            <!-- Table of RICE/ICE comparisons -->
+            <div class="p-6 bg-slate-900 rounded-xl border border-slate-800">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 text-xs uppercase tracking-wider text-slate-400">
+                                <th class="py-3 px-4">Initiative</th>
+                                <th class="py-3 px-4">RICE Score</th>
+                                <th class="py-3 px-4">ICE Score</th>
+                                <th class="py-3 px-4">Value Matrix Rank</th>
+                                <th class="py-3 px-4">Strategic Action Plan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-slate-800/50">
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Problem 1: Post-ERP Hyper-automation</td>
+                                <td class="py-3.5 px-4 text-slate-300">840 <span class="text-xs text-emerald-400 ml-1.5 font-medium">(High Reach)</span></td>
+                                <td class="py-3.5 px-4 text-slate-300">9.0 <span class="text-xs text-emerald-400 ml-1.5 font-medium">(High Ease)</span></td>
+                                <td class="py-3.5 px-4"><span class="px-2 py-0.5 bg-slate-950 text-slate-300 border border-slate-800 rounded-full text-xs font-semibold">Strategic Core</span></td>
+                                <td class="py-3.5 px-4 text-emerald-400 font-semibold">Build Immediately</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Problem 2: PMI Synergy Analytics</td>
+                                <td class="py-3.5 px-4 text-slate-300">540 <span class="text-xs text-slate-400 ml-1.5 font-medium">(Medium Reach)</span></td>
+                                <td class="py-3.5 px-4 text-slate-300">7.5 <span class="text-xs text-slate-400 ml-1.5 font-medium">(Medium Ease)</span></td>
+                                <td class="py-3.5 px-4"><span class="px-2 py-0.5 bg-slate-950 text-slate-300 border border-slate-800 rounded-full text-xs font-semibold">High Margin</span></td>
+                                <td class="py-3.5 px-4 text-slate-300 font-semibold">Target Next</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Problem 3: Supply Chain Resilience</td>
+                                <td class="py-3.5 px-4 text-slate-300">620 <span class="text-xs text-slate-400 ml-1.5 font-medium">(High Impact)</span></td>
+                                <td class="py-3.5 px-4 text-slate-300">8.0 <span class="text-xs text-slate-400 ml-1.5 font-medium">(Medium Ease)</span></td>
+                                <td class="py-3.5 px-4"><span class="px-2 py-0.5 bg-slate-950 text-slate-300 border border-slate-800 rounded-full text-xs font-semibold">High Margin</span></td>
+                                <td class="py-3.5 px-4 text-slate-300 font-semibold">Develop Next</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Problem 4: ESG BRSR Compliance</td>
+                                <td class="py-3.5 px-4 text-slate-300">880 <span class="text-xs text-emerald-400 ml-1.5 font-medium">(Highest Priority)</span></td>
+                                <td class="py-3.5 px-4 text-slate-300">9.5 <span class="text-xs text-emerald-400 ml-1.5 font-medium">(Highest Score)</span></td>
+                                <td class="py-3.5 px-4"><span class="px-2 py-0.5 bg-slate-950 text-slate-300 border border-slate-800 rounded-full text-xs font-semibold">High Speed Win</span></td>
+                                <td class="py-3.5 px-4 text-emerald-400 font-semibold">Build Immediately</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-4 font-semibold text-slate-200">Problem 5: CapEx Simulation Engine</td>
+                                <td class="py-3.5 px-4 text-slate-300">480 <span class="text-xs text-slate-400 ml-1.5 font-medium">(High Impact)</span></td>
+                                <td class="py-3.5 px-4 text-slate-300">7.0 <span class="text-xs text-slate-400 ml-1.5 font-medium">(Low Ease)</span></td>
+                                <td class="py-3.5 px-4"><span class="px-2 py-0.5 bg-slate-950 text-slate-300 border border-slate-800 rounded-full text-xs font-semibold">Highly Complex</span></td>
+                                <td class="py-3.5 px-4 text-slate-400 font-semibold">Long-term Play</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Logic Block -->
+    <script>
+        /* Tab Switching Navigation */
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-800', 'text-emerald-400', 'border', 'border-slate-700/50');
+                btn.classList.add('text-slate-400', 'hover:bg-slate-800/50', 'hover:text-slate-200');
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('bg-slate-800', 'text-emerald-400', 'border', 'border-slate-700/50');
+            activeBtn.classList.remove('text-slate-400', 'hover:bg-slate-800/50', 'hover:text-slate-200');
+        }
+
+        /* Problems Dataset and Calculations */
+        const problemData = {
+            1: {
+                title: "Post-ERP Hyper-automation & Lost-Process Value Recovery",
+                desc: "Multinational enterprises spend millions migrating to cloud-native suites. However, post-implementation, 20-30% of critical transactions revert to manual shadow spreadsheets. By running log extraction, process mining identifies failures and routes them back via custom automated API links.",
+                tech: ["Celonis", "n8n", "OpenAI GPT-4o", "Model Context Protocol"],
+                label1: "Enterprise Revenue Scale ($M)",
+                label2: "Estimated Systemic Leakage %",
+                label3: "Target Engagement Cost ($k)",
+                calcLoss: (rev, leak) => rev * 1000000 * 0.25 * (leak / 100),
+                calcRecovered: (loss) => loss * 0.80,
+                calcPayout: (rec, months) => 50000 + (rec * 0.15) + (3500 * months),
+                calcROI: (rec, cost) => rec / (cost * 1000)
+            },
+            2: {
+                title: "Cross-Border M&A PMI Synergy Analytics",
+                desc: "Up to 70-90% of mergers fail to hit stated cost synergies because general ledgers cannot be standardized quickly. A Secure Semantic Clean Room matches disparate accounting lines and products dynamically using semantic embedding models.",
+                tech: ["LangChain", "LlamaIndex", "Neo4j Database", "Pinecone Vector Space"],
+                label1: "Transaction Value Scale ($M)",
+                label2: "GL Incompatibility Risk %",
+                label3: "Integration Retainer Fee ($k)",
+                calcLoss: (rev, leak) => rev * 1000000 * 0.15 * (leak / 100),
+                calcRecovered: (loss) => loss * 0.70,
+                calcPayout: (rec, months) => 120000 + (rec * 0.10) + (15000 * months),
+                calcROI: (rec, cost) => rec / (cost * 1000)
+            },
+            3: {
+                title: "Multimodal Supply Chain Vulnerability & Carrier Optimization",
+                desc: "Global logistics face volatile tariffs and climatic disruption. Legacy ERP structures rely on delayed historical shipping logs. This dashboard monitors real-time global backlogs and suggests predictive re-routings before delays occur.",
+                tech: ["Palantir Foundry", "Apache NiFi", "Claude 3.5 Sonnet", "XGBoost"],
+                label1: "Annual Shipping Outlay ($M)",
+                label2: "Route Interruption Risk %",
+                label3: "Implementation Setup Outlay ($k)",
+                calcLoss: (rev, leak) => rev * 1000000 * 0.12 * (leak / 100),
+                calcRecovered: (loss) => loss * 0.65,
+                calcPayout: (rec, months) => 80000 + (rec * 0.10) + (4500 * months),
+                calcROI: (rec, cost) => rec / (cost * 1000)
+            },
+            4: {
+                title: "Enterprise ESG BRSR Compliance Orchestration",
+                desc: "Evolving frameworks require comprehensive audits of supplier sustainability footprints. Manual collection takes months because supplier records are highly unstructured. Custom parsers automate ingestion from utility bills and invoices.",
+                tech: ["Azure Doc Intelligence", "LangGraph Agents", "Secure SQL", "Python Analysis"],
+                label1: "Operational Overhead ($M)",
+                label2: "Unstructured Supplier Footprint %",
+                label3: "Compliance Implementation Fee ($k)",
+                calcLoss: (rev, leak) => rev * 1000000 * 0.05 * (leak / 100),
+                calcRecovered: (loss) => loss * 0.90,
+                calcPayout: (rec, months) => 65000 + (2800 * months),
+                calcROI: (rec, cost) => rec / (cost * 1000)
+            },
+            5: {
+                title: "Corporate Capital Allocation & CapEx Simulation Engine",
+                desc: "Traditional long-term investment models operate on static spreadsheets, failing to adjust for inflation shifts and competitor variables. This Python Monte Carlo simulator updates risk variables continuously against live macroeconomic streams.",
+                tech: ["Python Engines", "Finnhub APIs", "Claude 3.5 Sonnet", "D3.js Viz"],
+                label1: "Proposed CapEx Allocation ($M)",
+                label2: "Allocation Modeling Variance %",
+                label3: "Platform Customization Cost ($k)",
+                calcLoss: (rev, leak) => rev * 1000000 * 0.20 * (leak / 100),
+                calcRecovered: (loss) => loss * 0.50,
+                calcPayout: (rec, months) => 95000 + (5000 * months),
+                calcROI: (rec, cost) => rec / (cost * 1000)
+            }
+        };
+
+        let activeProblem = 1;
+
+        function selectProblem(id) {
+            activeProblem = id;
+            for (let i = 1; i <= 5; i++) {
+                const btn = document.getElementById(`prob-${i}`);
+                if (i === id) {
+                    btn.className = "p-4 text-left rounded-xl border border-emerald-500 bg-slate-900/50 transition duration-200 flex flex-col justify-between h-36";
+                } else {
+                    btn.className = "p-4 text-left rounded-xl border border-slate-800 hover:border-slate-700 bg-slate-900/20 transition duration-200 flex flex-col justify-between h-36";
+                }
+            }
+            recalculate();
+        }
+
+        function recalculate() {
+            const p = problemData[activeProblem];
+            const v1 = parseFloat(document.getElementById('input-slider-1').value);
+            const v2 = parseFloat(document.getElementById('input-slider-2').value);
+            const v3 = parseFloat(document.getElementById('input-slider-3').value);
+
+            document.getElementById('slider-label-1').innerText = p.label1;
+            document.getElementById('slider-label-2').innerText = p.label2;
+            document.getElementById('slider-label-3').innerText = p.label3;
+
+            document.getElementById('slider-val-1').innerText = `$${v1}M`;
+            document.getElementById('slider-val-2').innerText = `${v2}%`;
+            document.getElementById('slider-val-3').innerText = `$${v3}k`;
+
+            document.getElementById('selected-badge').innerText = `PROBLEM ${activeProblem}`;
+            document.getElementById('out-strategy-header').innerText = p.title;
+            document.getElementById('out-desc').innerText = p.desc;
+
+            // Dynamic calculations
+            const loss = p.calcLoss(v1, v2);
+            const rec = p.calcRecovered(loss);
+            const payout = p.calcPayout(rec, 12); /* Hardcoded to 12-month standard evaluation scale */
+            const roiVal = p.calcROI(rec, v3);
+
+            document.getElementById('out-lost').innerText = `$${Math.round(loss).toLocaleString()}`;
+            document.getElementById('out-recovered').innerText = `$${Math.round(rec).toLocaleString()}`;
+            document.getElementById('out-upfront').innerText = `$${Math.round(payout * 0.3).toLocaleString()}`;
+            document.getElementById('out-payout').innerText = `$${Math.round(payout * 0.7).toLocaleString()}`;
+            document.getElementById('out-total-consultant').innerText = `$${Math.round(payout).toLocaleString()}`;
+            document.getElementById('out-roi').innerText = `${roiVal.toFixed(1)}x`;
+
+            // Update tech stack pill layouts
+            const stackList = document.getElementById('tech-stack-list');
+            stackList.innerHTML = '';
+            p.tech.forEach(t => {
+                const span = document.createElement('span');
+                span.className = "px-2.5 py-1 bg-slate-950 text-slate-300 border border-slate-800 rounded-md text-[10px] font-semibold";
+                span.innerText = t;
+                stackList.appendChild(span);
+            });
+        }
+
+        /* Recruiting Fit Slider Calculations */
+        const firmConfig = {
+            deloitte: {
+                title: "Deloitte (Consulting & Advisory)",
+                desc: "End-to-end global operator. Focuses heavily on massive technical integration deployments and agile Product Management framework lifecycles.",
+                weights: [0.15, 0.15, 0.20, 0.25, 0.25],
+                criteria: [
+                    { label: "EVD Methodology", detail: "Deploys rigid, phase-gate execution models to minimize risk across corporate teams." },
+                    { label: "Agile Implementer", detail: "Requires PM profiles skilled in mapping user stories, tracking engineering backlogs, and running MVPs." }
+                ]
+            },
+            bain: {
+                title: "Bain & Company (Pure-Play Strategy)",
+                desc: "Elite advisor with premium rate caps and equity kickers. Maniacal focus on cash results, post-merger integration, and high-speed due diligence.",
+                weights: [0.35, 0.25, 0.20, 0.10, 0.10],
+                criteria: [
+                    { label: "Answer-First Model", detail: "Intensely hypothesis-driven, data-backed, and pragmatic analytical synthesis." },
+                    { label: "PE Value Maximizer", detail: "Requires evaluating portfolios through growth loops and mapping unit economics." }
+                ]
+            },
+            ey: {
+                title: "EY (Consulting / Parthenon)",
+                desc: "Leverages legacy auditing client bases to pitch operational advisory, balancing commercial growth strategies with structural risk management.",
+                weights: [0.20, 0.20, 0.15, 0.20, 0.25],
+                criteria: [
+                    { label: "Integrated Compliance", detail: "Ensures digital transformation structures comply deeply with global governance frameworks." },
+                    { label: "Purpose-Led Design", detail: "Deeply stakeholder-centric, blending risk mitigation with strategic agility." }
+                ]
+            }
+        };
+
+        let activeFirm = 'deloitte';
+
+        function setTargetFirm(firmId) {
+            activeFirm = firmId;
+            ['deloitte', 'bain', 'ey'].forEach(f => {
+                const btn = document.getElementById(`btn-firm-${f}`);
+                if (f === firmId) {
+                    btn.className = "px-3 py-1.5 rounded-md text-xs font-bold uppercase transition bg-slate-800 text-emerald-400";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-md text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200";
+                }
+            });
+            updateRecruiting();
+        }
+
+        function updateRecruiting() {
+            const s1 = parseFloat(document.getElementById('slider-skill-1').value);
+            const s2 = parseFloat(document.getElementById('slider-skill-2').value);
+            const s3 = parseFloat(document.getElementById('slider-skill-3').value);
+            const s4 = parseFloat(document.getElementById('slider-skill-4').value);
+            const s5 = parseFloat(document.getElementById('slider-skill-5').value);
+
+            document.getElementById('val-skill-1').innerText = `${s1}%`;
+            document.getElementById('val-skill-2').innerText = `${s2}%`;
+            document.getElementById('val-skill-3').innerText = `${s3}%`;
+            document.getElementById('val-skill-4').innerText = `${s4}%`;
+            document.getElementById('val-skill-5').innerText = `${s5}%`;
+
+            const f = firmConfig[activeFirm];
+            const prob = Math.round((s1 * f.weights[0]) + (s2 * f.weights[1]) + (s3 * f.weights[2]) + (s4 * f.weights[3]) + (s5 * f.weights[4]));
+
+            document.getElementById('out-firm-title').innerText = f.title;
+            document.getElementById('out-firm-desc').innerText = f.desc;
+            document.getElementById('placement-percent').innerText = `${prob}%`;
+
+            // Circle circular progression formula
+            const ring = document.getElementById('gauge-ring');
+            const circ = 2 * Math.PI * 42;
+            const offset = circ - (prob / 100) * circ;
+            ring.setAttribute('stroke-dashoffset', offset);
+
+            if (prob >= 80) ring.setAttribute('stroke', '#10b981');
+            else if (prob >= 60) ring.setAttribute('stroke', '#3b82f6');
+            else ring.setAttribute('stroke', '#f43f5e');
+
+            // Render Requirements details dynamically
+            const reqContainer = document.getElementById('out-firm-requirements');
+            reqContainer.innerHTML = '';
+            f.criteria.forEach((c, idx) => {
+                const card = document.createElement('div');
+                card.className = "p-3.5 bg-slate-950 rounded-lg border border-slate-800 flex flex-col justify-between";
+                card.innerHTML = `
+                    <div class="flex justify-between items-center mb-1.5">
+                        <span class="font-semibold text-slate-200">${c.label}</span>
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold uppercase bg-emerald-500/10 text-emerald-400">FIRM PILLAR</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">${c.detail}</p>
+                `;
+                reqContainer.appendChild(card);
+            });
+        }
+
+        /* Roadmap Section Selection */
+        const roadmapPhases = {
+            1: {
+                title: "Months 1–6: The Core Foundation",
+                subtitle: "Focus on mastering analytical frameworks and strictly MECE case architectures.",
+                milestones: [
+                    "Read Case Interview Secrets (Month 1) and The Minto Pyramid Principle (Month 3).",
+                    "Solve 3 live peer-to-peer case simulations weekly emphasizing pricing turnarounds.",
+                    "Build 2 dynamic, multi-variable profitability models in Excel based on earnings files.",
+                    "Achieve case speed standard: build logical issue trees within 2 minutes of prompts."
+                ],
+                certs: ["Case Prep Fundamentals", "Double-entry Literacy"],
+                book: "Case Interview Secrets",
+                author: "Victor Cheng"
+            },
+            2: {
+                title: "Months 7–12: Advanced Technical Integration",
+                subtitle: "Acquiring deep enterprise AI strategy and three-statement financial modeling.",
+                milestones: [
+                    "Complete 3 core modules of institutional valuation training (FMVA track).",
+                    "Build a complete corporate dynamic valuation model from scratch in Excel.",
+                    "Develop a local AI research agent using Python API interfaces to process annual reports.",
+                    "Log 2 advanced case interviews weekly focusing on digital integration obstacles."
+                ],
+                certs: ["FMVA Certification", "AWS Certified AI Practitioner"],
+                book: "Principles of Corporate Finance",
+                author: "Brealey, Myers, Allen"
+            },
+            3: {
+                title: "Months 13–18: Commercial Exposure & Networking",
+                subtitle: "Securing strategic corporate internships and executing peer-benchmarked value assets.",
+                milestones: [
+                    "Secure a summer internship focused on Product Management or Corporate Strategy.",
+                    "Conduct 2 informational interviews weekly with alumni or consultants at top firms.",
+                    "Publish weekly analytical pieces on LinkedIn covering platform network effect patterns.",
+                    "Complete a comprehensive value chain analysis whitepaper for your target industry vertical."
+                ],
+                certs: ["Professional Scrum Master", "Palantir Foundry Data Analyst"],
+                book: "Thinking in Systems",
+                author: "Donella Meadows"
+            },
+            4: {
+                title: "Months 19–24: Interview Execution & Placement",
+                subtitle: "Perfecting executive presentation, finalizing profiles, and completing final partner rounds.",
+                milestones: [
+                    "Conduct 4 high-fidelity mock cases weekly with senior consultants or alumni mentors.",
+                    "Run 2 behavioral simulations weekly focusing strictly on the STAR/SCR framework.",
+                    "Ensure every single bullet on your resume follows the quantitative X-Y-Z formula.",
+                    "Successfully pass early-stage screenings and navigate final partner loops."
+                ],
+                certs: ["Certified Scrum Product Owner", "Executive Minto Certification"],
+                book: "The Minto Pyramid Principle",
+                author: "Barbara Minto"
+            }
+        };
+
+        function selectPhase(id) {
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`phase-tab-${i}`);
+                if (i === id) {
+                    btn.className = "py-2.5 rounded-lg text-xs font-bold uppercase transition bg-slate-800 text-emerald-400 border border-slate-700/50";
+                } else {
+                    btn.className = "py-2.5 rounded-lg text-xs font-bold uppercase transition text-slate-400 hover:text-slate-200";
+                }
+            }
+
+            const phase = roadmapPhases[id];
+            document.getElementById('out-phase-title').innerText = phase.title;
+            document.getElementById('out-phase-subtitle').innerText = phase.subtitle;
+            document.getElementById('out-phase-book').innerText = phase.book;
+            document.getElementById('out-phase-author').innerText = phase.author;
+
+            const mileContainer = document.getElementById('out-phase-milestones');
+            mileContainer.innerHTML = '';
+            phase.milestones.forEach((m, idx) => {
+                const card = document.createElement('div');
+                card.className = "flex items-start gap-3 p-3 bg-slate-950 rounded-lg border border-slate-800";
+                card.innerHTML = `
+                    <span class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-bold text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+                    <p class="text-xs text-slate-300 leading-relaxed">${m}</p>
+                `;
+                mileContainer.appendChild(card);
+            });
+
+            const certContainer = document.getElementById('out-phase-certs');
+            certContainer.innerHTML = '';
+            phase.certs.forEach(c => {
+                const li = document.createElement('li');
+                li.className = "flex items-center gap-2.5 text-slate-300";
+                li.innerHTML = `<i class="fa-regular fa-circle-check text-emerald-400 text-sm"></i> ${c}`;
+                certContainer.appendChild(li);
+            });
+        }
+
+        /* Page Initialization */
+        window.onload = function() {
+            selectProblem(1);
+            updateRecruiting();
+            selectPhase(1);
+        };
+    </script>
+</body>
+</html>
