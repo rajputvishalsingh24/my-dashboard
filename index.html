@@ -72,6 +72,9 @@
             <button onclick="switchTab('matrix')" id="btn-matrix" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200">
                 <i class="fa-solid fa-table-cells w-5"></i> Prioritization Matrix
             </button>
+                    <button onclick="switchTab('focus')" id="btn-focus" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition text-slate-400 hover:bg-slate-800/50 hover:text-slate-200">
+                <i class="fa-solid fa-bullseye w-5"></i> Management Consulting Goals
+            </button>
         </nav>
         <div class="p-4 border-t border-slate-800 bg-slate-900/50">
             <div class="flex items-center gap-3 p-2 bg-slate-950 rounded-lg border border-slate-800">
@@ -552,6 +555,102 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+        <div id="tab-focus" class="tab-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Management Consulting Goals</h2>
+                    <p class="text-slate-400 mt-1">The five capability areas I want to build a career around.</p>
+                </div>
+                <span class="px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Live Focus Report</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
+                        <i class="fa-solid fa-chess-knight text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Improving Business Strategy</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-3">Helping organizations decide where to compete and how to win, evaluating growth options, repositioning against competitors, and aligning strategy with what customers actually value.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Porter's Five Forces</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Growth-Share Matrix</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Blue Ocean Strategy</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
+                        <i class="fa-solid fa-scissors text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Reducing Costs &amp; Increasing Efficiency</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-3">Finding where money and time leak out of a business, process inefficiencies, redundant spend, or manual work, and building the case for where to cut versus where to reinvest.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Zero-Based Budgeting</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Lean / Six Sigma</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Process Mining</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
+                        <i class="fa-solid fa-people-arrows text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Managing Organizational Change</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-3">Helping people, not just processes, adapt, designing change management plans, communication strategies, and incentive structures so new strategies and systems actually stick.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Kotter's 8-Step Model</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">ADKAR</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Stakeholder Mapping</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
+                        <i class="fa-solid fa-magnifying-glass-chart text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Market &amp; Competitive Analysis</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-3">Sizing markets, tracking competitor moves, and translating raw data into a clear picture of where the real opportunity, and the real threat, actually sits.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">TAM/SAM/SOM</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">SWOT</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Benchmarking</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
+                        <i class="fa-solid fa-gears text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Designing Operating Models &amp; Processes</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-3">Redesigning how work actually flows through an organization, roles, decision rights, handoffs, and systems, so the strategy on paper survives contact with day-to-day operations.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">RACI Matrices</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Target Operating Model</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Process Redesign</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
+                        <i class="fa-solid fa-handshake text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Supporting M&amp;A &amp; Transformations</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-3">Helping companies grow or reinvent themselves through deals and large-scale transformation, due diligence, synergy modeling, and post-merger integration planning.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Due Diligence</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">Synergy Modeling</span>
+                        <span class="px-2 py-0.5 bg-slate-950 text-[10px] text-slate-400 border border-slate-800 rounded-full">PMI Playbooks</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="p-6 bg-gradient-to-br from-emerald-500/10 to-blue-500/5 rounded-xl border border-emerald-500/20">
+                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2"><i class="fa-solid fa-lightbulb text-emerald-400"></i> Why This Combination</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">These six areas are the full lifecycle of a management consulting engagement: diagnose the strategy, find the cost and efficiency gaps, redesign the operating model, validate it against the market, manage the human side of change, and, where growth requires it, support the deal or transformation that gets the company there. My Commerce plus Product Management background gives me a natural entry point into the strategy and market-analysis end, while my product-thinking skills translate directly into operating-model design and change management.</p>
             </div>
         </div>
     </main>
